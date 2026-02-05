@@ -1,0 +1,47 @@
+﻿@page "/reports/allemployeesallmeetings"
+@using Telerik.FontIcons
+@using Stats.Models
+
+<PageTitle>All Employees in All Meetings</PageTitle>
+
+<div class="pgtitle">
+    <div class="pgtitlefont">All Employees for All Meetings</div>
+</div>
+
+<div class="d-flex flex-row">
+    <div class="dateholder">
+        <label for="StartDatePicker">Start Date</label>
+        <TelerikDatePicker T="DateTime" ValueChanged="@(StartDateChanged)" Size="md" Rounded="md" Format="MM/dd/yyyy" Id="StartDatePicker" Value="@StartDate" Min="@MinDate" Max="@MaxDate"></TelerikDatePicker>
+    </div>
+
+    <div>
+        <label for="EndDatePicker">End Date</label>
+        <TelerikDatePicker T="DateTime" ValueChanged="@(EndDateChanged)" Size="md" Rounded="md" Format="MM/dd/yyyy" Id="EndDatePicker" Value="@EndDate" Min="@MinDate" Max="@MaxDate"></TelerikDatePicker>
+    </div>
+   
+</div>
+
+<hr />
+<div>
+    <TelerikLoaderContainer Size="md" ThemeColor="Primary" Visible="@PageWait" LoaderType="LoaderType.InfiniteSpinner" LoaderPosition="LoaderPosition.Start" Text="Loading..."></TelerikLoaderContainer>
+
+    <TelerikGrid Data="@GridData" EnableLoaderContainer="true" Sortable="true" FilterMenuType="FilterMenuType.Menu" FilterMode="GridFilterMode.FilterMenu" Size="@ThemeConstants.Grid.Size.Small" Resizable="true"
+                 Height="600px" Pageable="true" ScrollMode="GridScrollMode.Scrollable" PageSize="20" Groupable="true">
+        <GridToolBarTemplate>
+            <GridCommandButton Command="ExcelExport" Icon="@FontIcon.FileExcel">Export to Excel</GridCommandButton>
+            <span class="k-toolbar-spacer"></span>
+            <GridSearchBox />
+        </GridToolBarTemplate>
+        <GridExport>
+            <GridExcelExport FileName="All_Employees_in_All_Meetings" AllPages="true" />
+        </GridExport>
+        <GridColumns>
+            <GridColumn Field="@nameof(EmployeesAllMeetingsDto.DisplayName)" Title="Name"></GridColumn>
+            <GridColumn Field="@nameof(EmployeesAllMeetingsDto.Email)" Title="Email"></GridColumn>
+            <GridColumn Field="@nameof(EmployeesAllMeetingsDto.Title)" Title="Meeting Title"></GridColumn>
+            <GridColumn DisplayFormat="{0:MM/dd/yyyy hh:mm tt}" Field="@nameof(EmployeesAllMeetingsDto.Start)" Title="Start" Filterable="false" />
+            <GridColumn DisplayFormat="{0:MM/dd/yyyy hh:mm tt}" Field="@nameof(EmployeesAllMeetingsDto.JoinedTime)" Title="Joined" Filterable="false" />
+        </GridColumns>
+
+    </TelerikGrid>
+</div>

@@ -1,0 +1,14 @@
+﻿
+<TelerikWindow @bind-Visible="@DialogVisible" Centered="true" CloseOnOverlayClick="true" Modal="true" Width="1200px">
+    <WindowTitle>
+        @DialogTitle
+    </WindowTitle>
+    <WindowContent>
+        <EmployeeMeetings EmployeeEmail="@Email" DisplayName="@DisplayName" EndDate="@EndDate" StartDate="@StartDate" TotalEmployeeTime="@EmployeeTotalTime"></EmployeeMeetings>
+    </WindowContent>
+    <WindowActions>
+        <WindowAction Name="Close"/>
+    </WindowActions>
+</TelerikWindow>
+
+

@@ -1,0 +1,151 @@
+﻿{
+   "CodeGenerationMode": 3,
+   "ContextClassName": "WebExStatsContext",
+   "ContextNamespace": null,
+   "DefaultDacpacSchema": null,
+   "FilterSchemas": false,
+   "IncludeConnectionString": false,
+   "ModelNamespace": null,
+   "OutputContextPath": null,
+   "OutputPath": "Entities",
+   "PreserveCasingWithRegex": true,
+   "ProjectRootNamespace": "Stats.Api",
+   "Schemas": null,
+   "SelectedHandlebarsLanguage": 0,
+   "SelectedToBeGenerated": 0,
+   "T4TemplatePath": null,
+   "Tables": [
+      {
+         "Name": "[dbo].[DataPullLogs]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[MeetingParticipants]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[Meetings]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[Tokens]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[FiServeTotalEmpMeetingsView]",
+         "ObjectType": 3
+      },
+      {
+         "Name": "[dbo].[MeetingParticipantDateView]",
+         "ObjectType": 3
+      },
+      {
+         "Name": "[dbo].[MeetingParticipantDateWithPhoneView]",
+         "ObjectType": 3
+      },
+      {
+         "Name": "[dbo].[MeetingParticipantTimeView]",
+         "ObjectType": 3
+      },
+      {
+         "Name": "[dbo].[TotalTimePerMonthView]",
+         "ObjectType": 3
+      },
+      {
+         "Name": "[dbo].[AddMeeting]",
+         "ObjectType": 1
+      },
+      {
+         "Name": "[dbo].[AddParticipant]",
+         "ObjectType": 1
+      },
+      {
+         "Name": "[dbo].[AddPullLog]",
+         "ObjectType": 1
+      },
+      {
+         "Name": "[dbo].[AllEmployeesInAllMeetings]",
+         "ObjectType": 1
+      },
+      {
+         "Name": "[dbo].[ByEmployeeTotalTimeInMeetings]",
+         "ObjectType": 1
+      },
+      {
+         "Name": "[dbo].[EmployeeMeetings]",
+         "ObjectType": 1
+      },
+      {
+         "Name": "[dbo].[EmployeeMeetingTotalTime]",
+         "ObjectType": 1
+      },
+      {
+         "Name": "[dbo].[EmployeeNames]",
+         "ObjectType": 1
+      },
+      {
+         "Name": "[dbo].[EmployeeTotalFiServMeetings]",
+         "ObjectType": 1
+      },
+      {
+         "Name": "[dbo].[EmployeeTotalNonFiServMeetings]",
+         "ObjectType": 1
+      },
+      {
+         "Name": "[dbo].[GetMeetingsNoParticipants]",
+         "ObjectType": 1
+      },
+      {
+         "Name": "[dbo].[LastDataPull]",
+         "ObjectType": 1
+      },
+      {
+         "Name": "[dbo].[MeetingParticipantsList]",
+         "ObjectType": 1
+      },
+      {
+         "Name": "[dbo].[SetParticipantsPulled]",
+         "ObjectType": 1
+      },
+      {
+         "Name": "[dbo].[StartEndDates]",
+         "ObjectType": 1
+      },
+      {
+         "Name": "[dbo].[TopFiservUsers]",
+         "ObjectType": 1
+      },
+      {
+         "Name": "[dbo].[TopUsers]",
+         "ObjectType": 1
+      },
+      {
+         "Name": "[dbo].[TotalEmployeeTimeInAllMeetings]",
+         "ObjectType": 1
+      },
+      {
+         "Name": "[dbo].[TotalTimePerMonth]",
+         "ObjectType": 1
+      }
+   ],
+   "UiHint": "vdi114.WebExStats.dbo",
+   "UncountableWords": null,
+   "UseBoolPropertiesWithoutDefaultSql": false,
+   "UseDatabaseNames": false,
+   "UseDateOnlyTimeOnly": false,
+   "UseDbContextSplitting": false,
+   "UseFluentApiOnly": true,
+   "UseHandleBars": false,
+   "UseHierarchyId": false,
+   "UseInflector": false,
+   "UseLegacyPluralizer": false,
+   "UseManyToManyEntity": false,
+   "UseNoDefaultConstructor": false,
+   "UseNoObjectFilter": false,
+   "UseNodaTime": false,
+   "UseNullableReferences": false,
+   "UseSchemaFolders": false,
+   "UseSchemaNamespaces": false,
+   "UseSpatial": false,
+   "UseT4": false
+}

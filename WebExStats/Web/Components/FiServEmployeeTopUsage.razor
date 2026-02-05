@@ -1,0 +1,40 @@
+﻿@using Stats.Models
+<div class="chartmain">
+    <div class="d-flex flex-row">
+        <div class="!k-mr-2">
+            <label for="StartDatePicker">Start Date:</label>
+            <TelerikDatePicker T="DateTime" Width="125px" Size="sm" Rounded="md" Format="MM/dd/yyyy" Id="StartDatePicker" Value="@StartDate" Min="@MinDate" Max="@MaxDate" ValueChanged="@( StartDateChanged )"></TelerikDatePicker>
+        </div>
+        <div>
+            <label for="EndDatePicker">End Date:</label>
+            <TelerikDatePicker T="DateTime" Width="125px" Size="sm" Rounded="md" Format="MM/dd/yyyy" Id="EndDatePicker" Value="@EndDate" Min="@MinDate" Max="@MaxDate" ValueChanged="@( EndDateChanged )"></TelerikDatePicker>
+        </div>
+    </div>
+
+    <div class="chartdiv">
+
+        <TelerikLoaderContainer Size="md" ThemeColor="Primary" Visible="@PageWait" LoaderType="LoaderType.InfiniteSpinner" LoaderPosition="LoaderPosition.Start" Text="Loading..."></TelerikLoaderContainer>
+
+        <TelerikChart OnSeriesClick="@ChartClicked">
+            <ChartSeriesItems>
+
+                <ChartSeries Type="ChartSeriesType.Bar" Data="@ChartData"
+                             Field="@nameof(TopUsersDto.EmployeeTotalTime)"
+                             CategoryField="@nameof(TopUsersDto.DisplayName)" AutoFit="true" Color="#6F42C1">
+                    <ChartSeriesLabels Visible="true">
+
+                    </ChartSeriesLabels>
+
+                </ChartSeries>
+
+
+                <ChartTitle Text="FiServ Meetings Top WebEx Users (in minutes)"></ChartTitle>
+
+
+            </ChartSeriesItems>
+        </TelerikChart>
+    </div>
+</div>
+
+<EmployeeMeetingDetails @ref="@DetailsWindow"></EmployeeMeetingDetails>
+

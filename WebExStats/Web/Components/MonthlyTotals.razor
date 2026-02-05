@@ -1,0 +1,36 @@
+﻿@using Stats.Models
+
+<div class="chartmain">
+    <div class="d-flex flex-row">
+        <div class="!k-mr-2">
+            <label for="StartDatePicker">Start Date:</label>
+            <TelerikDropDownList TValue="int" TItem="DtPickerData" TextField="@nameof(DtPickerData.MonthDate)" ValueField="@nameof(DtPickerData.Id)" Data="@DtPickerList" Id="StartDatePicker" Width="125px" Size="sm" Rounded="md" Value="@SelectedStartDate.Id" ValueChanged="@( StartDateChanged )"></TelerikDropDownList>
+        </div>
+        <div>
+            <label for="EndDatePicker">End Date:</label>
+            <TelerikDropDownList TValue="int" TItem="DtPickerData" TextField="@nameof(DtPickerData.MonthDate)" ValueField="@nameof(DtPickerData.Id)" Data="@DtPickerList" Id="EndDatePicker" Width="125px" Size="sm" Rounded="md" Value="@SelectedEndDate.Id" ValueChanged="@( EndDateChanged )"></TelerikDropDownList>
+        </div>
+    </div>
+
+    <div class="chartdiv">
+
+        <TelerikLoaderContainer Size="md" ThemeColor="Primary" Visible="@PageWait" LoaderType="LoaderType.InfiniteSpinner" LoaderPosition="LoaderPosition.Start" Text="Loading..."></TelerikLoaderContainer>
+
+        <TelerikChart >
+            <ChartSeriesItems>
+                <ChartSeries Type="ChartSeriesType.Line" Data="@ChartData" Field="@nameof(MonthTotalSeriesDto.SeriesTotal)" Name="Total Minutes">
+                    <ChartSeriesLabels Visible="true"></ChartSeriesLabels>
+                </ChartSeries>
+                <ChartSeries Type="ChartSeriesType.Line" Data="@ChartData" Field="@nameof(MonthTotalSeriesDto.SeriesFiltered)" Name="Total FiServ Minutes">
+                    <ChartSeriesLabels Visible="true"></ChartSeriesLabels>
+                </ChartSeries>
+
+                <ChartCategoryAxes>
+                    <ChartCategoryAxis Categories="@DateAxisData"></ChartCategoryAxis>
+                </ChartCategoryAxes>
+                <ChartTitle Text="Total Monthly Time (in minutes)"></ChartTitle>
+                <ChartLegend Position="ChartLegendPosition.Top"/>
+            </ChartSeriesItems>
+        </TelerikChart>
+    </div>
+</div>

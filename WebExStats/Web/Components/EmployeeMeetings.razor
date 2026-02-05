@@ -1,0 +1,49 @@
+﻿@using Stats.Models
+<div class="d-flex flex-row">
+  
+        <TelerikLoaderContainer Size="md" ThemeColor="Primary" Visible="@BarChartWait" LoaderType="LoaderType.InfiniteSpinner" LoaderPosition="LoaderPosition.Start" Text="Loading..."></TelerikLoaderContainer>
+
+        <TelerikChart Width="65%">
+            <ChartSeriesItems>
+
+                <ChartSeries Type="ChartSeriesType.Bar" Data="@Meetings"
+                             Field="@nameof(EmployeeMeetingDto.PercentOfTotalTime)" ColorField="@nameof(EmployeeMeetingDto.Color)"
+                             CategoryField="@nameof(EmployeeMeetingDto.Title)" AutoFit="true" >
+                    <ChartSeriesLabels Visible="true" Format="{0:P2}" >
+                
+                    </ChartSeriesLabels>
+                    <ChartSeriesTooltip Visible="true">
+                        <Template>
+                            <span>Total Time: @((context.DataItem as EmployeeMeetingDto)?.EmployeeTime)</span>
+                        </Template>
+                    </ChartSeriesTooltip>
+                </ChartSeries>
+       
+
+                <ChartTitle Text="Top Meetings"></ChartTitle>
+
+
+            </ChartSeriesItems>
+        </TelerikChart>
+
+
+        <TelerikLoaderContainer Size="md" ThemeColor="Primary" Visible="@PieChartWait" LoaderType="LoaderType.InfiniteSpinner" LoaderPosition="LoaderPosition.Start" Text="Loading..."></TelerikLoaderContainer>
+
+    <TelerikChart Width="35%">
+            <ChartSeriesItems>
+
+                <ChartSeries Type="ChartSeriesType.Pie" Data="@CompareMeetings"
+                             Field="@nameof(CompareTimeDto.PercentOfTotalTime)" ColorField="@nameof(CompareTimeDto.Color)"
+                             CategoryField="@nameof(CompareTimeDto.DisplayName)" AutoFit="true">
+                   <ChartSeriesLabels Visible="true" Format="{0:P2}"></ChartSeriesLabels>
+                    
+                </ChartSeries>
+       
+
+                <ChartTitle Text="FiServ vs Non FiServ Meeting Time"></ChartTitle>
+
+
+            </ChartSeriesItems>
+        </TelerikChart>
+    
+</div>

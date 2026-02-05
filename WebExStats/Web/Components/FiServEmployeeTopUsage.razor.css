@@ -1,0 +1,16 @@
+﻿.chartmain {
+    border: 1px solid lightgray;
+    border-radius: 5px;
+    padding: 1.5em;
+    width: 50%;
+    
+    position: relative;
+}
+
+.chartdiv {
+    margin-top: 1em;
+}
+
+::deep .k-chart g[clip-path] g g g path {
+    cursor: pointer;
+}

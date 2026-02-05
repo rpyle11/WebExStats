@@ -1,0 +1,15 @@
+﻿@using Stats.Models
+<div class="p-2">
+    <TelerikLoaderContainer Size="md" ThemeColor="Primary" Visible="@PageWait" LoaderType="LoaderType.InfiniteSpinner" LoaderPosition="LoaderPosition.Start" Text="Loading..."></TelerikLoaderContainer>
+
+    <TelerikGrid Data="@Participants"
+                 EnableLoaderContainer="true" Sortable="true"
+                 Pageable="false" FilterMode="GridFilterMode.FilterMenu" FilterMenuType="FilterMenuType.CheckBoxList"
+                 ScrollMode="GridScrollMode.Scrollable" Height="150px" Size="sm">
+        <GridColumns>
+            <GridColumn Field="@nameof(MeetingParticipantDto.DisplayName)" Title="Name"></GridColumn>
+            <GridColumn Field="@nameof(MeetingParticipantDto.ParticipantTime)" Title="Employee Time" Filterable="false"></GridColumn>
+        </GridColumns>
+    </TelerikGrid>
+</div>
+

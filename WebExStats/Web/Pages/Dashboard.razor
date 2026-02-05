@@ -1,0 +1,29 @@
+﻿@page "/"
+@page "/dashboard"
+@using Microsoft.Extensions.Options
+@using Stats.Web.Models
+
+<PageTitle>WebEx Statistics Dashboard</PageTitle>
+
+<div class="d-flex flex-row">
+    <ErrorBoundary>
+        <MonthlyTotals MonthlyFilters="@Settings.Value.MonthlyTotalFilters" />
+    </ErrorBoundary>
+</div>
+
+<div class="d-flex flex-row">
+    <ErrorBoundary>
+        <EmployeeTopUsage />
+    </ErrorBoundary>
+    
+    <ErrorBoundary>
+        <FiServEmployeeTopUsage />
+    </ErrorBoundary>
+</div>
+
+@code
+{
+    [Inject] IOptions<AppSettings> Settings { get; set; }
+}
+
+

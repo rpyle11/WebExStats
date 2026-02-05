@@ -1,0 +1,43 @@
+@layout TelerikLayout
+@using Stats.Web.Services
+@using Stats.Models
+@using System.Reflection
+@inherits LayoutComponentBase
+
+<PageTitle>Web</PageTitle>
+
+<div class="page">
+    <div class="sidebar">
+        <NavMenu />
+    </div>
+
+    <main>
+        <div class="top-row px-4">
+            <div style="padding-top: 1.2em;">
+                <div class="float-start">
+                    <span class="sitetitle">WebEx Stats</span>
+                </div>
+
+            </div>
+            <div class="float-end" style="padding-top: .75em;">
+                <ErrorBoundary>
+                    <UserInfo />
+                </ErrorBoundary>
+            </div>
+        </div>
+
+        <article class="content">
+            @Body
+        </article>
+
+
+        <footer class="text-center">
+            <p>&copy; 2023 - WebEx Stats</p>
+        </footer>
+    </main>
+</div>
+
+
+
+
+
