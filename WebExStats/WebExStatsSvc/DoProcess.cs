@@ -12,17 +12,13 @@ namespace WebExStatsSvc
         {
             try
             {
-                var paras = await SetMeetingParameters();
 
-                if (paras != null)
+                var meetingResponse = await ApiCalls.GetMeetingsCall();
+
+                if (meetingResponse)
                 {
-                    var meetingResponse = await ApiCalls.GetMeetingsCall(paras);
+                    return await ApiCalls.GetMeetingParticipantsCall();
 
-                    if (meetingResponse)
-                    {
-                        return await ApiCalls.GetMeetingParticipantsCall();
-
-                    }
                 }
                 else
                 {
@@ -30,6 +26,8 @@ namespace WebExStatsSvc
                 }
 
                 return true;
+             
+                
             }
             catch (Exception ex)
             {
@@ -45,46 +43,6 @@ namespace WebExStatsSvc
             return false;
         }
 
-        private static async Task<MeetingParameters> SetMeetingParameters()
-        {
-            var parameters = new MeetingParameters
-            {
-                FromDate = DateTime.Now,
-                ToDate = DateTime.Now
-            };
-
-            //1. if from and to dates are set on config - this is used for populating old data
-
-            if (!string.IsNullOrEmpty(Properties.Settings.Default.FromDate) &&
-                !string.IsNullOrEmpty(Properties.Settings.Default.ToDate))
-            {
-                var fromIsDate = DateTime.TryParse(Properties.Settings.Default.FromDate, out var dtF);
-                var toIsDate = DateTime.TryParse(Properties.Settings.Default.ToDate, out var dtT);
-
-                if (fromIsDate && toIsDate)
-                {
-                    parameters.FromDate = dtF;
-                    parameters.ToDate = dtT;
-                }
-                else
-                {
-                    return parameters;
-                }
-            }
-            else
-            {
-                //if nothing is set need to check for a last pull date
-                var lastPull = await ApiCalls.GetLastPull();
-
-                if (!lastPull.PullDate.HasValue) return parameters;  //if nothing is set just use values set when declaring variable
-                parameters.FromDate = lastPull.PullDate.Value;
-                parameters.ToDate = DateTime.Now;
-
-            }
-
-            //if nothing is set just use values set when declaring variable
-            return parameters;
-            
-        }
+      
     }
 }

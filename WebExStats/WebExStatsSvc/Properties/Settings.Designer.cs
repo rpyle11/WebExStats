@@ -12,7 +12,7 @@ namespace WebExStatsSvc.Properties {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "17.11.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "17.14.0.0")]
     internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {
         
         private static Settings defaultInstance = ((Settings)(global::System.Configuration.ApplicationSettingsBase.Synchronized(new Settings())));
@@ -61,7 +61,7 @@ namespace WebExStatsSvc.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("8:00 PM")]
+        [global::System.Configuration.DefaultSettingValueAttribute("2:46 PM")]
         public string RunTime {
             get {
                 return ((string)(this["RunTime"]));
@@ -85,7 +85,7 @@ namespace WebExStatsSvc.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("http://localhost/statsapi/api/puller/meetings")]
+        [global::System.Configuration.DefaultSettingValueAttribute("http://localhost/webexapi/api/search/meetings")]
         public string WebExStatsMeetingUrl {
             get {
                 return ((string)(this["WebExStatsMeetingUrl"]));
@@ -97,7 +97,7 @@ namespace WebExStatsSvc.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("http://localhost/statsapi/api/puller/participants")]
+        [global::System.Configuration.DefaultSettingValueAttribute("http://localhost/webexapi/api/search/participants")]
         public string WebExStatusParticipantsUrl {
             get {
                 return ((string)(this["WebExStatusParticipantsUrl"]));
@@ -140,18 +140,6 @@ namespace WebExStatsSvc.Properties {
             }
             set {
                 this["NotifyEmail"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("http://localhost/statsapi/api/puller/datapull/meeting")]
-        public string WebExStatsLastPullUrl {
-            get {
-                return ((string)(this["WebExStatsLastPullUrl"]));
-            }
-            set {
-                this["WebExStatsLastPullUrl"] = value;
             }
         }
     }

@@ -12,16 +12,16 @@
       <Value Profile="(Default)" />
     </Setting>
     <Setting Name="RunTime" Type="System.String" Scope="User">
-      <Value Profile="(Default)">8:00 PM</Value>
+      <Value Profile="(Default)">2:46 PM</Value>
     </Setting>
     <Setting Name="LogUrl" Type="System.String" Scope="User">
       <Value Profile="(Default)">http://localhost/logapi/api/log/setlog</Value>
     </Setting>
     <Setting Name="WebExStatsMeetingUrl" Type="System.String" Scope="User">
-      <Value Profile="(Default)">http://localhost/statsapi/api/puller/meetings</Value>
+      <Value Profile="(Default)">http://localhost/webexapi/api/search/meetings</Value>
     </Setting>
     <Setting Name="WebExStatusParticipantsUrl" Type="System.String" Scope="User">
-      <Value Profile="(Default)">http://localhost/statsapi/api/puller/participants</Value>
+      <Value Profile="(Default)">http://localhost/webexapi/api/search/participants</Value>
     </Setting>
     <Setting Name="AppLogEmailSubject" Type="System.String" Scope="User">
       <Value Profile="(Default)">WebExStats Service Alert</Value>
@@ -31,9 +31,6 @@
     </Setting>
     <Setting Name="NotifyEmail" Type="System.String" Scope="User">
       <Value Profile="(Default)">rpyle@greatsouthernbank.com</Value>
-    </Setting>
-    <Setting Name="WebExStatsLastPullUrl" Type="System.String" Scope="User">
-      <Value Profile="(Default)">http://localhost/statsapi/api/puller/datapull/meeting</Value>
     </Setting>
   </Settings>
 </SettingsFile>
